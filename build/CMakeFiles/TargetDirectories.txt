@@ -1,0 +1,3 @@
+/home/kloks/Programer/Group3/build/CMakeFiles/InfectionSim.dir
+/home/kloks/Programer/Group3/build/CMakeFiles/edit_cache.dir
+/home/kloks/Programer/Group3/build/CMakeFiles/rebuild_cache.dir
