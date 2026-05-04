@@ -6,9 +6,10 @@
 using json = nlohmann::json;
 
 int main(){
-    std::ifstream file("data/config.json");
+    std::string configPath = std::string(PROJECT_SOURCE_DIR) + "/data/config.json";
+    std::ifstream file(configPath);
     if (!file.is_open()){
-        std::cerr << "Error: could not open config.json" << std::endl;
+        std::cerr << "Error: could not open config.json" << configPath << std::endl;
         return 1;
     }
 
