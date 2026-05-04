@@ -7,6 +7,6 @@ find_package(nlohmann_json REQUIRED)
 
 include_directories(include)
 
-add_executable(InfectionSim src/main.cpp)
+add_executable(InfectionSim src/main.cpp src/Simulation.cpp)
 
 target_link_libraries(InfectionSim nlohmann_json::nlohmann_json)
