@@ -1,16 +1,29 @@
-#include "Simulation.hpp"
-#include "Virus.hpp"
 #include <iostream>
+#include <fstream>
+#include <nlohmann/json.hpp>
+#include "Virus.hpp"
+
+using json = nlohmann::json;
 
 int main(){
-    std::cout << "Simulation Started" << std::endl;
-    Virus covid = {"COVID-Lite", 1.5, 7, 0.05}; // Заразность 1.5 , болезнь 7 дней, смертность 5%
-    Simulation sim(1000000, 10, covid); // 1 млн. население, изначально 10 заражённых
-
-    for ( int i = 1; i <= 30; ++i){ // Симуляция 30 дней
-        sim.nextDay();
-        sim.printStats();
+    std::ifstream file("data/config.json");
+    if (!file.is_open()){
+        std::cerr << "Error: could not open config.json" << std::endl;
+        return 1;
     }
 
+    // Парсинг JSON
+    json config;
+    file >> config;
+
+    // Вывод данных для проверки
+    std::cout << "--- Viruses found in config ---" << std::endl;
+    for (const auto& item : config["viruses"]){
+        std::string name = item["name"];
+        double rate = item["infection_rate"];
+
+        std::cout << "Name: " << name << " | Rate: " << rate << std:: endl;
+
+    }
     return 0;
 }
