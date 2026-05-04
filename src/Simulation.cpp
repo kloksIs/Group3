@@ -1,4 +1,5 @@
 #include "Simulation.hpp"
+#include "Virus.hpp"
 
 #include <iostream>
 #include <vector>
