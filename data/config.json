@@ -1,0 +1,16 @@
+{
+  "viruses": [
+    {
+      "name": "COVID-Lite",
+      "infection_rate": 1.5,
+      "incubation_period": 7,
+      "mortality_rate": 0.05
+    },
+    {
+      "name": "Zombie-Virus",
+      "infection_rate": 2.1,
+      "incubation_period": 2,
+      "mortality_rate": 0.99
+    }
+  ]
+}
