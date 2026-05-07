@@ -18,14 +18,23 @@ int main(){
     json config;
     file >> config;
 
-    Simulation Sim(1000000);
+    Simulation sim(1000000);
     for (const auto& item : config["viruses"]){
-        Sim.addVirus(Virus(item),10);
+        sim.addVirus(Virus(item),10);
     }
-    for (int i = 0; i < 15; i++){
-        Sim.nextDay();
-        Sim.printStats();
+    
+    int daysToRun;
+    while (sim.getTotalSick() > 0) {
+        std::cout << "Enter days to simulate (or 0 to stop): ";
+        std::cin >> daysToRun;
+        if (daysToRun <= 0) break;
+
+        for (int i = 0; i < daysToRun; ++i) {
+            sim.nextDay();
+            sim.printStats();
+        }
     }
+
     
 
     return 0;
