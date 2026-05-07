@@ -8,13 +8,21 @@
 
 VirusState::VirusState(Virus v, long long initial_sick) : virus(v) {
         sick_days.resize(v.getIncubationPeriod(), 0);
-        if (!sick_days.empty()) sick_days[0] = initial_sick;
+        sick_days[0] = initial_sick;
     }
 
 Simulation::Simulation(long long total_pop): healthy(total_pop){}
 
 void Simulation::addVirus(const Virus& v, long long initial_sick){
+    if (v.getIncubationPeriod() <= 0) {
+        throw std::invalid_argument("Error: Virus '" + v.getName() + "' must have duration > 0");
+    }
+    if (initial_sick > healthy) {
+        throw std::runtime_error("Error: Not enough healthy people for initial infection of " + v.getName());
+    }
+    
     active_viruses.push_back(VirusState(v, initial_sick));
+    healthy -= initial_sick;
 }
 
 void Simulation::nextDay(){
