@@ -2,6 +2,7 @@
 #include <fstream>
 #include <nlohmann/json.hpp>
 #include "Virus.hpp"
+#include "Simulation.hpp"
 
 using json = nlohmann::json;
 
@@ -17,14 +18,15 @@ int main(){
     json config;
     file >> config;
 
-    // Вывод данных для проверки
-    std::cout << "--- Viruses found in config ---" << std::endl;
+    Simulation Sim(1000000);
     for (const auto& item : config["viruses"]){
-        std::string name = item["name"];
-        double rate = item["infection_rate"];
-
-        std::cout << "Name: " << name << " | Rate: " << rate << std:: endl;
-
+        Sim.addVirus(Virus(item),10);
     }
+    for (int i = 0; i < 15; i++){
+        Sim.nextDay();
+        Sim.printStats();
+    }
+    
+
     return 0;
 }

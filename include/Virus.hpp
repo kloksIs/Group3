@@ -18,7 +18,7 @@ public:
     // Геттеры (чтобы Simulation могла брать данные)
     std::string getName() const { return name; }
     double getInfectionRate() const { return infection_rate; }
-    int getInfectionPeriod() const { return incubation_period; }
+    int getIncubationPeriod() const { return incubation_period; }
     double getMortalityRate() const { return mortality_rate; }
 };
 
