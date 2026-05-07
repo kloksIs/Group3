@@ -54,3 +54,11 @@ void Simulation::printStats() {
     }
     std::cout << "--------------------" << std::endl;
 }
+
+double Simulation::getTotalSick(){
+    double global_sick = 0;
+    for (const auto& state : active_viruses){
+        global_sick += std::accumulate(state.sick_days.begin(), state.sick_days.end(), 0LL);
+    }
+    return global_sick;
+}
