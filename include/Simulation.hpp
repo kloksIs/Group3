@@ -1,7 +1,7 @@
 /**
  * @file Simulation.hpp
  * @brief Классы VirusState и Simulation для симуляции эпидемии
- * @author Ваша команда
+ * @author Артем Петров, Эльвира Бочкарева, Елизавета Цепелева, Вадим Горшков
  * @version 1.0
  */
 
