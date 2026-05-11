@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>InfectionSim: Класс Simulation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">InfectionSim<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_simulation.html','','class_simulation-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс Simulation</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Главный класс симуляции эпидемии  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_simulation_8hpp_source.html">Simulation.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a34cfc9aa708b8c154778c35ad52bddd7" id="r_a34cfc9aa708b8c154778c35ad52bddd7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34cfc9aa708b8c154778c35ad52bddd7">Simulation</a> (long long total_pop)</td></tr>
+<tr class="memdesc:a34cfc9aa708b8c154778c35ad52bddd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор симуляции  <br /></td></tr>
+<tr class="memitem:a915b1dd524cb3616c882dde733d42ae7" id="r_a915b1dd524cb3616c882dde733d42ae7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a915b1dd524cb3616c882dde733d42ae7">addVirus</a> (const <a class="el" href="class_virus.html">Virus</a> &amp;v, long long initial_sick)</td></tr>
+<tr class="memdesc:a915b1dd524cb3616c882dde733d42ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет вирус в симуляцию  <br /></td></tr>
+<tr class="memitem:a2f85edd401e55868431f59ad944f9a50" id="r_a2f85edd401e55868431f59ad944f9a50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2f85edd401e55868431f59ad944f9a50">removeVirus</a> (int index)</td></tr>
+<tr class="memdesc:a2f85edd401e55868431f59ad944f9a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет вирус по индексу  <br /></td></tr>
+<tr class="memitem:a847db02f165a11979565ab128b09e442" id="r_a847db02f165a11979565ab128b09e442"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a847db02f165a11979565ab128b09e442">nextDay</a> ()</td></tr>
+<tr class="memdesc:a847db02f165a11979565ab128b09e442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Симулирует один день  <br /></td></tr>
+<tr class="memitem:af2906ced2404f60e35b8fa48b63a3a0b" id="r_af2906ced2404f60e35b8fa48b63a3a0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af2906ced2404f60e35b8fa48b63a3a0b">printStats</a> ()</td></tr>
+<tr class="memdesc:af2906ced2404f60e35b8fa48b63a3a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит текущую статистику в консоль  <br /></td></tr>
+<tr class="memitem:a763868c0923facd7eb0b8fe5ae01bdaf" id="r_a763868c0923facd7eb0b8fe5ae01bdaf"><td class="memItemLeft">long long&#160;</td><td class="memItemRight"><a class="el" href="#a763868c0923facd7eb0b8fe5ae01bdaf">getHealthy</a> () const</td></tr>
+<tr class="memdesc:a763868c0923facd7eb0b8fe5ae01bdaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущее количество здоровых людей  <br /></td></tr>
+<tr class="memitem:a39eec0fa18789431a0bc49e5c6c1eabf" id="r_a39eec0fa18789431a0bc49e5c6c1eabf"><td class="memItemLeft">long long&#160;</td><td class="memItemRight"><a class="el" href="#a39eec0fa18789431a0bc49e5c6c1eabf">getGlobalSick</a> () const</td></tr>
+<tr class="memdesc:a39eec0fa18789431a0bc49e5c6c1eabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общее количество больных по всем вирусам  <br /></td></tr>
+<tr class="memitem:a440027c31c87a12007ee0ac4d85b540d" id="r_a440027c31c87a12007ee0ac4d85b540d"><td class="memItemLeft">long long&#160;</td><td class="memItemRight"><a class="el" href="#a440027c31c87a12007ee0ac4d85b540d">getGlobalRecovered</a> () const</td></tr>
+<tr class="memdesc:a440027c31c87a12007ee0ac4d85b540d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общее количество выздоровевших за всё время  <br /></td></tr>
+<tr class="memitem:ae1f1ed4d4abfedd0a1facdc022972f14" id="r_ae1f1ed4d4abfedd0a1facdc022972f14"><td class="memItemLeft">long long&#160;</td><td class="memItemRight"><a class="el" href="#ae1f1ed4d4abfedd0a1facdc022972f14">getGlobalDead</a> () const</td></tr>
+<tr class="memdesc:ae1f1ed4d4abfedd0a1facdc022972f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает общее количество умерших за всё время  <br /></td></tr>
+<tr class="memitem:a599e446cf97533db7aced15e764c82d5" id="r_a599e446cf97533db7aced15e764c82d5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a599e446cf97533db7aced15e764c82d5">getVirusCount</a> () const</td></tr>
+<tr class="memdesc:a599e446cf97533db7aced15e764c82d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество активных вирусов  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Главный класс симуляции эпидемии </p>
+<p>Управляет популяцией и распространением вирусов </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a34cfc9aa708b8c154778c35ad52bddd7" name="a34cfc9aa708b8c154778c35ad52bddd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34cfc9aa708b8c154778c35ad52bddd7">&#9670;&#160;</a></span>Simulation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Simulation::Simulation </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>total_pop</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор симуляции </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">total_pop</td><td>Общая численность населения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a915b1dd524cb3616c882dde733d42ae7" name="a915b1dd524cb3616c882dde733d42ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915b1dd524cb3616c882dde733d42ae7">&#9670;&#160;</a></span>addVirus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::addVirus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_virus.html">Virus</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>initial_sick</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет вирус в симуляцию </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Вирус </td></tr>
+    <tr><td class="paramname">initial_sick</td><td>Начальное количество заражённых </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1f1ed4d4abfedd0a1facdc022972f14" name="ae1f1ed4d4abfedd0a1facdc022972f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f1ed4d4abfedd0a1facdc022972f14">&#9670;&#160;</a></span>getGlobalDead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long Simulation::getGlobalDead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает общее количество умерших за всё время </p>
+
+</div>
+</div>
+<a id="a440027c31c87a12007ee0ac4d85b540d" name="a440027c31c87a12007ee0ac4d85b540d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a440027c31c87a12007ee0ac4d85b540d">&#9670;&#160;</a></span>getGlobalRecovered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long Simulation::getGlobalRecovered </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает общее количество выздоровевших за всё время </p>
+
+</div>
+</div>
+<a id="a39eec0fa18789431a0bc49e5c6c1eabf" name="a39eec0fa18789431a0bc49e5c6c1eabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39eec0fa18789431a0bc49e5c6c1eabf">&#9670;&#160;</a></span>getGlobalSick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long Simulation::getGlobalSick </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает общее количество больных по всем вирусам </p>
+
+</div>
+</div>
+<a id="a763868c0923facd7eb0b8fe5ae01bdaf" name="a763868c0923facd7eb0b8fe5ae01bdaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763868c0923facd7eb0b8fe5ae01bdaf">&#9670;&#160;</a></span>getHealthy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long Simulation::getHealthy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает текущее количество здоровых людей </p>
+
+</div>
+</div>
+<a id="a599e446cf97533db7aced15e764c82d5" name="a599e446cf97533db7aced15e764c82d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599e446cf97533db7aced15e764c82d5">&#9670;&#160;</a></span>getVirusCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Simulation::getVirusCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает количество активных вирусов </p>
+
+</div>
+</div>
+<a id="a847db02f165a11979565ab128b09e442" name="a847db02f165a11979565ab128b09e442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847db02f165a11979565ab128b09e442">&#9670;&#160;</a></span>nextDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::nextDay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Симулирует один день </p>
+<p>Обновляет показатели распространения и исходы болезней </p>
+
+</div>
+</div>
+<a id="af2906ced2404f60e35b8fa48b63a3a0b" name="af2906ced2404f60e35b8fa48b63a3a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2906ced2404f60e35b8fa48b63a3a0b">&#9670;&#160;</a></span>printStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::printStats </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит текущую статистику в консоль </p>
+<p>Отображает актуальную информацию по всем вирусам и популяции </p>
+
+</div>
+</div>
+<a id="a2f85edd401e55868431f59ad944f9a50" name="a2f85edd401e55868431f59ad944f9a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f85edd401e55868431f59ad944f9a50">&#9670;&#160;</a></span>removeVirus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Simulation::removeVirus </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет вирус по индексу </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Индекс вируса в списке </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>include/<a class="el" href="_simulation_8hpp_source.html">Simulation.hpp</a></li>
+<li>src/<a class="el" href="_simulation_8cpp.html">Simulation.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_simulation.html">Simulation</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>InfectionSim: Исходный файл include/Simulation.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">InfectionSim<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_simulation_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Simulation.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_simulation_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SIMULATION_HPP</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SIMULATION_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_virus_8hpp.html">Virus.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_virus_state.html">   18</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_virus_state.html#a306ba98bcc4bc4af0df37b7743a46e28">VirusState</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_virus_state.html#a84ae82a757ecac12a3c746ba928bafa9">   19</a></span>    <a class="code hl_class" href="class_virus.html">Virus</a> <a class="code hl_variable" href="struct_virus_state.html#a84ae82a757ecac12a3c746ba928bafa9">virus</a>;                      </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_virus_state.html#af661d07efa336e716e216bc7f8b2d7d7">   20</a></span>    std::vector&lt;long long&gt; <a class="code hl_variable" href="struct_virus_state.html#af661d07efa336e716e216bc7f8b2d7d7">sick_days</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_virus_state.html#a94ff727c74b65833ada7e71fd9221d84">   21</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="struct_virus_state.html#a94ff727c74b65833ada7e71fd9221d84">recovered</a> = 0;          </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_virus_state.html#ac3fc673cb1e1d1ed3fc95aea6007cfd2">   22</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="struct_virus_state.html#ac3fc673cb1e1d1ed3fc95aea6007cfd2">dead</a> = 0;               </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="struct_virus_state.html#a306ba98bcc4bc4af0df37b7743a46e28">VirusState</a>(<a class="code hl_class" href="class_virus.html">Virus</a> v, <span class="keywordtype">long</span> <span class="keywordtype">long</span> initial_sick);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_simulation.html">   36</a></span><span class="keyword">class </span><a class="code hl_function" href="class_simulation.html#a34cfc9aa708b8c154778c35ad52bddd7">Simulation</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> healthy;                    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> global_sick = 0;            </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> global_recovered = 0;       </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> global_dead = 0;            </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> current_day = 0;                  </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::vector&lt;VirusState&gt; active_viruses; </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="class_simulation.html#a34cfc9aa708b8c154778c35ad52bddd7">Simulation</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> total_pop);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_simulation.html#a915b1dd524cb3616c882dde733d42ae7">addVirus</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_virus.html">Virus</a>&amp; v, <span class="keywordtype">long</span> <span class="keywordtype">long</span> initial_sick);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_simulation.html#a2f85edd401e55868431f59ad944f9a50">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_simulation.html#a2f85edd401e55868431f59ad944f9a50">removeVirus</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_simulation.html#a847db02f165a11979565ab128b09e442">nextDay</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_simulation.html#af2906ced2404f60e35b8fa48b63a3a0b">printStats</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_simulation.html#a763868c0923facd7eb0b8fe5ae01bdaf">   78</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="class_simulation.html#a763868c0923facd7eb0b8fe5ae01bdaf">getHealthy</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> healthy; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_simulation.html#a39eec0fa18789431a0bc49e5c6c1eabf">   81</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="class_simulation.html#a39eec0fa18789431a0bc49e5c6c1eabf">getGlobalSick</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> global_sick; }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_simulation.html#a440027c31c87a12007ee0ac4d85b540d">   84</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="class_simulation.html#a440027c31c87a12007ee0ac4d85b540d">getGlobalRecovered</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> global_recovered; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_simulation.html#ae1f1ed4d4abfedd0a1facdc022972f14">   87</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="class_simulation.html#ae1f1ed4d4abfedd0a1facdc022972f14">getGlobalDead</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> global_dead; }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_simulation.html#a599e446cf97533db7aced15e764c82d5">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_simulation.html#a599e446cf97533db7aced15e764c82d5">getVirusCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> active_viruses.size(); }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_virus_8hpp_html"><div class="ttname"><a href="_virus_8hpp.html">Virus.hpp</a></div><div class="ttdoc">Класс Virus - параметры вируса</div></div>
+<div class="ttc" id="aclass_simulation_html_a2f85edd401e55868431f59ad944f9a50"><div class="ttname"><a href="class_simulation.html#a2f85edd401e55868431f59ad944f9a50">Simulation::removeVirus</a></div><div class="ttdeci">void removeVirus(int index)</div><div class="ttdoc">Удаляет вирус по индексу</div></div>
+<div class="ttc" id="aclass_simulation_html_a34cfc9aa708b8c154778c35ad52bddd7"><div class="ttname"><a href="class_simulation.html#a34cfc9aa708b8c154778c35ad52bddd7">Simulation::Simulation</a></div><div class="ttdeci">Simulation(long long total_pop)</div><div class="ttdoc">Конструктор симуляции</div><div class="ttdef"><b>Определения</b> Simulation.cpp:14</div></div>
+<div class="ttc" id="aclass_simulation_html_a39eec0fa18789431a0bc49e5c6c1eabf"><div class="ttname"><a href="class_simulation.html#a39eec0fa18789431a0bc49e5c6c1eabf">Simulation::getGlobalSick</a></div><div class="ttdeci">long long getGlobalSick() const</div><div class="ttdoc">Возвращает общее количество больных по всем вирусам</div><div class="ttdef"><b>Определения</b> Simulation.hpp:81</div></div>
+<div class="ttc" id="aclass_simulation_html_a440027c31c87a12007ee0ac4d85b540d"><div class="ttname"><a href="class_simulation.html#a440027c31c87a12007ee0ac4d85b540d">Simulation::getGlobalRecovered</a></div><div class="ttdeci">long long getGlobalRecovered() const</div><div class="ttdoc">Возвращает общее количество выздоровевших за всё время</div><div class="ttdef"><b>Определения</b> Simulation.hpp:84</div></div>
+<div class="ttc" id="aclass_simulation_html_a599e446cf97533db7aced15e764c82d5"><div class="ttname"><a href="class_simulation.html#a599e446cf97533db7aced15e764c82d5">Simulation::getVirusCount</a></div><div class="ttdeci">int getVirusCount() const</div><div class="ttdoc">Возвращает количество активных вирусов</div><div class="ttdef"><b>Определения</b> Simulation.hpp:90</div></div>
+<div class="ttc" id="aclass_simulation_html_a763868c0923facd7eb0b8fe5ae01bdaf"><div class="ttname"><a href="class_simulation.html#a763868c0923facd7eb0b8fe5ae01bdaf">Simulation::getHealthy</a></div><div class="ttdeci">long long getHealthy() const</div><div class="ttdoc">Возвращает текущее количество здоровых людей</div><div class="ttdef"><b>Определения</b> Simulation.hpp:78</div></div>
+<div class="ttc" id="aclass_simulation_html_a847db02f165a11979565ab128b09e442"><div class="ttname"><a href="class_simulation.html#a847db02f165a11979565ab128b09e442">Simulation::nextDay</a></div><div class="ttdeci">void nextDay()</div><div class="ttdoc">Симулирует один день</div><div class="ttdef"><b>Определения</b> Simulation.cpp:28</div></div>
+<div class="ttc" id="aclass_simulation_html_a915b1dd524cb3616c882dde733d42ae7"><div class="ttname"><a href="class_simulation.html#a915b1dd524cb3616c882dde733d42ae7">Simulation::addVirus</a></div><div class="ttdeci">void addVirus(const Virus &amp;v, long long initial_sick)</div><div class="ttdoc">Добавляет вирус в симуляцию</div><div class="ttdef"><b>Определения</b> Simulation.cpp:16</div></div>
+<div class="ttc" id="aclass_simulation_html_ae1f1ed4d4abfedd0a1facdc022972f14"><div class="ttname"><a href="class_simulation.html#ae1f1ed4d4abfedd0a1facdc022972f14">Simulation::getGlobalDead</a></div><div class="ttdeci">long long getGlobalDead() const</div><div class="ttdoc">Возвращает общее количество умерших за всё время</div><div class="ttdef"><b>Определения</b> Simulation.hpp:87</div></div>
+<div class="ttc" id="aclass_simulation_html_af2906ced2404f60e35b8fa48b63a3a0b"><div class="ttname"><a href="class_simulation.html#af2906ced2404f60e35b8fa48b63a3a0b">Simulation::printStats</a></div><div class="ttdeci">void printStats()</div><div class="ttdoc">Выводит текущую статистику в консоль</div><div class="ttdef"><b>Определения</b> Simulation.cpp:51</div></div>
+<div class="ttc" id="aclass_virus_html"><div class="ttname"><a href="class_virus.html">Virus</a></div><div class="ttdoc">Класс, представляющий вирус</div><div class="ttdef"><b>Определения</b> Virus.hpp:19</div></div>
+<div class="ttc" id="astruct_virus_state_html_a306ba98bcc4bc4af0df37b7743a46e28"><div class="ttname"><a href="struct_virus_state.html#a306ba98bcc4bc4af0df37b7743a46e28">VirusState::VirusState</a></div><div class="ttdeci">VirusState(Virus v, long long initial_sick)</div><div class="ttdoc">Конструктор состояния вируса</div><div class="ttdef"><b>Определения</b> Simulation.cpp:9</div></div>
+<div class="ttc" id="astruct_virus_state_html_a84ae82a757ecac12a3c746ba928bafa9"><div class="ttname"><a href="struct_virus_state.html#a84ae82a757ecac12a3c746ba928bafa9">VirusState::virus</a></div><div class="ttdeci">Virus virus</div><div class="ttdoc">Сам вирус</div><div class="ttdef"><b>Определения</b> Simulation.hpp:19</div></div>
+<div class="ttc" id="astruct_virus_state_html_a94ff727c74b65833ada7e71fd9221d84"><div class="ttname"><a href="struct_virus_state.html#a94ff727c74b65833ada7e71fd9221d84">VirusState::recovered</a></div><div class="ttdeci">long long recovered</div><div class="ttdoc">Выздоровевшие от этого вируса</div><div class="ttdef"><b>Определения</b> Simulation.hpp:21</div></div>
+<div class="ttc" id="astruct_virus_state_html_ac3fc673cb1e1d1ed3fc95aea6007cfd2"><div class="ttname"><a href="struct_virus_state.html#ac3fc673cb1e1d1ed3fc95aea6007cfd2">VirusState::dead</a></div><div class="ttdeci">long long dead</div><div class="ttdoc">Умершие от этого вируса</div><div class="ttdef"><b>Определения</b> Simulation.hpp:22</div></div>
+<div class="ttc" id="astruct_virus_state_html_af661d07efa336e716e216bc7f8b2d7d7"><div class="ttname"><a href="struct_virus_state.html#af661d07efa336e716e216bc7f8b2d7d7">VirusState::sick_days</a></div><div class="ttdeci">std::vector&lt; long long &gt; sick_days</div><div class="ttdoc">Очередь больных по дням заражения</div><div class="ttdef"><b>Определения</b> Simulation.hpp:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="_simulation_8hpp.html">Simulation.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
