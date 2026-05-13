@@ -23,6 +23,7 @@ void Simulation::addVirus(const Virus& v, long long initial_sick){
     
     active_viruses.push_back(VirusState(v, initial_sick));
     healthy -= initial_sick;
+    global_sick += initial_sick;
 }
 
 void Simulation::nextDay(){
@@ -32,41 +33,51 @@ void Simulation::nextDay(){
         long long new_infected = static_cast<long long>(total_sick * state.virus.getInfectionRate());
         if (new_infected > healthy) new_infected = healthy; // Ограничиваем возможное число больных
         healthy -= new_infected;
-
+        
         // Сдвигаем больных, добавляем новых
         long long finishing_illness = state.sick_days.back();
         for (int i = state.sick_days.size() - 1; i > 0; --i){
             state.sick_days[i] = state.sick_days[i-1];
         }
         state.sick_days[0] = new_infected;
-            
+        
         // Исход болезни
         long long deaths = finishing_illness * state.virus.getMortalityRate();
         state.dead += deaths;
-        state.recovered += (finishing_illness - deaths);
+        global_dead += deaths;
+        
+        long long new_recovered = finishing_illness - deaths;
+        state.recovered += new_recovered;
+        global_recovered += new_recovered;
+
+        // Добовляем настоящее количество заражённых по вирусам в глобальное значение
+        global_sick += (new_infected - finishing_illness);
     }
     current_day += 1; // Обновляем количетсво дней
 }
 
 void Simulation::printStats() {
-    std::cout << "\n--- Day " << current_day << " ---" << std::endl;
-    std::cout << "Healthy people: " << healthy << std::endl;
+    std::cout « "\n─── Day " « current_day « " ───" « std::endl;
 
-    for (const auto& state : active_viruses) {
-        long long total_sick = std::accumulate(state.sick_days.begin(), state.sick_days.end(), 0LL);
+    // Общае статистистические данные
+    std::cout « "  Population Details:" « std::endl;
+    std::cout « "    • Healthy   : " « healthy « std::endl;
+    std::cout « "    • Total Sick: " « global_sick « std::endl;
+    std::cout « "    • Deaths    : " « global_dead « std::endl;
+    std::cout « "    • Recovered : " « global_recovered « std::endl;
+
+    // Детализация по вирусам
+    if (!active_viruses.empty()) {
+        std::cout « "\n  Active Viruses:" « std::endl;
         
-        std::cout << "  > Virus: " << state.virus.getName()
-                  << " | Sick: " << total_sick
-                  << " | Dead: " << state.dead
-                  << " | Recovered: " << state.recovered << std::endl;
+        for (const auto& state : active_viruses) {
+            long long total_sick = std::accumulate(state.sick_days.begin(), state.sick_days.end(), 0LL);
+            
+            std::cout « "    ▶️ " « state.virus.getName() « std::endl;
+            std::cout « "      └──> Infected: " « total_sick 
+                      « "  |  Dead: " « state.dead 
+                      « "  |  Recovered: " « state.recovered « "\n" « std::endl;
+        }
     }
-    std::cout << "--------------------" << std::endl;
-}
-
-double Simulation::getTotalSick(){
-    double global_sick = 0;
-    for (const auto& state : active_viruses){
-        global_sick += std::accumulate(state.sick_days.begin(), state.sick_days.end(), 0LL);
-    }
-    return global_sick;
+    std::cout « "───────────────────────────────────" « std::endl;
 }
