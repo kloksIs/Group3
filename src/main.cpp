@@ -24,7 +24,7 @@ int main(){
     }
     
     int daysToRun;
-    while (sim.getTotalSick() > 0) {
+    while (sim.getGlobalSick() > 0) {
         std::cout << "Enter days to simulate (or 0 to stop): ";
         std::cin >> daysToRun;
         if (daysToRun <= 0) break;
